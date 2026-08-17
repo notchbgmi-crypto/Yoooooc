@@ -1,11 +1,21 @@
 services:
   - type: web
-    name: upload-bot
+    name: karanpay-bot
     runtime: python
-    plan: starter
-    buildCommand: pip install -r requirements.txt
-    startCommand: python upload_bot.py
+    plan: starter  # Free plan
+    buildCommand: |
+      pip install -r requirements.txt
+      pip install cloudscraper pymongo
+    startCommand: python FIXXXXX.py
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: MONGO_URL
+        value: "mongodb+srv://notchff644_db_user:n6ghmq4Cuz3ViMcf@cluster0.pqt6pea.mongodb.net/?appName=Cluster0"
+    healthCheckPath: /
     disk:
-      name: upload-bot-data
-      mountPath: /var/data
+      name: bot-data
+      mountPath: /data
       sizeGB: 1
