@@ -1,0 +1,16 @@
+# --- Core dependencies (required to run the host bot itself) ---
+pyTelegramBotAPI
+psutil
+requests
+flask
+qrcode[pil]
+Pillow
+imaplib2
+dnspython
+
+# --- Pre-installed for uploaded/child bot scripts (avoids a slow first-run pip install) ---
+python-telegram-bot
+pymongo
+certifi
+cloudscraper
+aiohttp
